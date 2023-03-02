@@ -36,7 +36,7 @@ def show_post(request, post_id):
 
 def show_category(request, cat_id):
     posts = Product.objects.filter(cat_id=cat_id)
-    cats = Category.objects.all()
+    # cats = Category.objects.all()
 
     if len(posts) == 0:
         raise Http404()
@@ -44,7 +44,7 @@ def show_category(request, cat_id):
 
     context = {
         'posts': posts,
-        'cats': cats,
+        # 'cats': cats,
         'menu': menu,
         'title': 'Basty bet',
         'cat_selected': cat_id,
